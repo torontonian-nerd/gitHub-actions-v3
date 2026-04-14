@@ -11,3 +11,19 @@ jobs:
               run: |
                 node -v
                 npm -v
+    
+    parallel-job-macos:
+        runs-on: macos-latest
+        steps:
+            - name: show mac version
+              run: sw_vers
+
+    dependent-job:
+        runs-on: windows-latest
+        needs: run-shell-commands # This job is run only after run-shell-commands is executed
+        steps:
+            - name: echo a string 
+              run: Write-Output " Windows String"
+            - name: Error 
+              run: doesnotexit
+
