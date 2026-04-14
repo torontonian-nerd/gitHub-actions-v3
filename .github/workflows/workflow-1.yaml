@@ -25,5 +25,4 @@ jobs:
             - name: echo a string 
               run: Write-Output " Windows String"
             - name: Error 
-              run: doesnotexit
-
+              run: doesnotexits
