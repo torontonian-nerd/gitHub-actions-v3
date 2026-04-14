@@ -1,0 +1,13 @@
+name: first workflow
+on: [push] # A trigger that tells GitHub Actions to run a workflow whenever code is pushed to the repository.
+
+jobs:
+    run-shell-commands:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a string
+              run: echo "hello world"
+            - name: multiline commands
+              run: 
+                node -v
+                npm -v
