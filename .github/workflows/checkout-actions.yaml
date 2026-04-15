@@ -2,7 +2,7 @@ name: Checkout
 on: [push]
 
 jobs:
-  checkout-action: # Clones the pwd and all its files 
+  checkout-action: # Clones the pwd from local machine and list all its files 
     runs-on: ubuntu-latest
     steps:
       - name: List Files Before
