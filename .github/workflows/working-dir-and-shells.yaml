@@ -1,5 +1,8 @@
 name: working dir and shells
 on: [push]
+defaults:
+    run:
+        shell: bash # Runs all jobs in workflow in bash
 jobs:
     display-working-dir-location:
         runs-on: ubuntu-latest
@@ -11,3 +14,6 @@ jobs:
                 echo "GITHUB_SHA"
                 echo "GITHUB_REPOSITORY"
                 echo "echo $GITHUB_WORKSPACE"
+            - name: Change working directory
+              working-directory: /home/runner
+              run: pwd
